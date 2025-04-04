@@ -1,0 +1,45 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def calculate_distance():
+    try:
+        initial_height = float(initial_height_entry.get())
+        bounciness_index = float(bounciness_index_entry.get())
+        num_bounces = int(num_bounces_entry.get())
+
+        if initial_height <= 0 or bounciness_index <= 0 or bounciness_index >= 1 or num_bounces < 0:
+            raise ValueError("Invalid inputs.")
+        
+        total_distance = 0
+        current_height = initial_height
+
+        for _ in range(num_bounces):
+            total_distance += current_height  
+            current_height *= bounciness_index  
+            total_distance += current_height  
+
+        result_label.config(text=f"Total Distance: {total_distance:.2f} units")
+    except ValueError:
+        messagebox.showerror("Input Error", "Please enter valid positive numbers. Bounciness index must be between 0 and 1.")
+
+root = tk.Tk()
+root.title("Bouncy Ball Distance Calculator")
+
+initial_height_label = tk.Label(root, text="Initial Height:")
+bounciness_index_label = tk.Label(root, text="Bounciness Index (0 < BI < 1):")
+num_bounces_label = tk.Label(root, text="Number of Bounces:")
+
+initial_height_entry = tk.Entry(root, width=10)
+bounciness_index_entry = tk.Entry(root, width=10)
+num_bounces_entry = tk.Entry(root, width=10)
+
+calculate_button = tk.Button(root, text="Calculate Distance", command=calculate_distance)
+
+result_label = tk.Label(root, text="Total Distance: ", font=("Arial", 12))
+
+initial_height_label.grid(row=0, column=0, padx=5, pady=5)
+initial_height_entry.grid(row=0, column=1, padx=5, pady=5)
+bounciness_index_label.grid(row=1, column=0, padx=5, pady=5)
+bounciness_index_entry.grid(row=1, column=1, padx=5, pady=5)
+num_bounces_label.grid(row=2, column=0, padx=5, pady=5)
+num_bounces_entry.grid(row=2, column

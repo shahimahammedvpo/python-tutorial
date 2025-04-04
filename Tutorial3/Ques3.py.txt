@@ -1,0 +1,14 @@
+import turtle
+
+screen = turtle.Screen()
+screen.bgcolor("yellow")
+
+circle = turtle.Turtle()
+circle.color("red")
+circle.speed(5)
+
+circle.circle(50)  
+
+circle.hideturtle()
+
+screen.mainloop()

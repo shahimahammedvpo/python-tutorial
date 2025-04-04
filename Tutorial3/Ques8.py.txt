@@ -1,0 +1,47 @@
+import tkinter as tk
+from tkinter import messagebox
+import random
+
+def check_guess():
+    global attempts
+    try:
+        guess = int(entry.get())
+        attempts += 1
+        if guess < number_to_guess:
+            feedback_label.config(text="Too small, try again please")
+        elif guess > number_to_guess:
+            feedback_label.config(text="Too large, try again please")
+        else:
+            feedback_label.config(text="Correct answer")
+            messagebox.showinfo("Congratulations!", f"You guessed it right!!! Total attempts: {attempts}")
+            reset_game()  
+    except ValueError:
+        messagebox.showerror("Error", "Please enter a valid integer")
+        entry.delete(0, tk.END)
+
+def reset_game():
+    global number_to_guess, attempts
+    number_to_guess = random.randint(1, 100)
+    attempts = 0
+    entry.delete(0, tk.END)
+    feedback_label.config(text="")
+
+root = tk.Tk()
+root.title("Guess the Number Game")
+
+number_to_guess = random.randint(1, 100)
+attempts = 0
+
+instruction_label = tk.Label(root, text="Guess a number between 1 and 100:")
+entry = tk.Entry(root, width=10)
+check_button = tk.Button(root, text="Check", command=check_guess)
+feedback_label = tk.Label(root, text="", font=("Arial", 12))
+reset_button = tk.Button(root, text="Reset Game", command=reset_game)
+
+instruction_label.grid(row=0, column=0, columnspan=2, pady=10)
+entry.grid(row=1, column=0, padx=5, pady=5)
+check_button.grid(row=1, column=1, padx=5, pady=5)
+feedback_label.grid(row=2, column=0, columnspan=2, pady=10)
+reset_button.grid(row=3, column=0, columnspan=2, pady=10)
+
+root.mainloop()
