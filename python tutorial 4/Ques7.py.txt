@@ -1,0 +1,31 @@
+
+
+class Student:
+    def __init__(self):
+       
+        self.rollno = 0
+        self.mark1 = 0
+        self.mark2 = 0
+
+    def readData(self):
+        
+        self.rollno = int(input("Enter Roll Number: "))
+        self.mark1 = float(input("Enter Marks for Subject 1: "))
+        self.mark2 = float(input("Enter Marks for Subject 2: "))
+
+    def computeTotal(self):
+       
+        return self.mark1 + self.mark2
+
+    def printDetails(self):
+        
+        total_marks = self.computeTotal()
+        print(f"Roll Number: {self.rollno}")
+        print(f"Marks 1: {self.mark1}")
+        print(f"Marks 2: {self.mark2}")
+        print(f"Total Marks: {total_marks}")
+
+student1 = Student()
+
+student1.readData()
+student1.printDetails()

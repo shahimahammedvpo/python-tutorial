@@ -1,0 +1,48 @@
+
+
+class Arith:
+    def __init__(self):
+        self.num1 = 0
+        self.num2 = 0
+
+    def read(self):
+        """Reads two numbers from the user."""
+        try:
+            self.num1 = float(input("Enter the first number: "))
+            self.num2 = float(input("Enter the second number: "))
+        except ValueError:
+            print("Invalid input. Please enter numerical values.")
+            self.read()
+
+    def add(self):
+        """Returns the sum of num1 and num2."""
+        return self.num1 + self.num2
+
+    def subtract(self):
+        """Returns the result of num1 minus num2."""
+        return self.num1 - self.num2
+
+    def multiply(self):
+        """Returns the product of num1 and num2."""
+        return self.num1 * self.num2
+
+    def divide(self):
+        """Returns the result of num1 divided by num2, handling division by zero."""
+        if self.num2 != 0:
+            return self.num1 / self.num2
+        else:
+            return "Error: Division by zero is not allowed."
+
+    def display_results(self):
+        """Displays the results of all operations."""
+        print(f"Sum: {self.add()}")
+        print(f"Difference: {self.subtract()}")
+        print(f"Product: {self.multiply()}")
+        print(f"Quotient: {self.divide()}")
+
+
+
+if __name__ == "__main__":
+    calculator = Arith()
+    calculator.read() 
+    calculator.display_results() 

@@ -1,0 +1,26 @@
+
+
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real  # real part
+        self.imag = imag  # imaginary part
+
+    def __add__(self, other):
+       
+        if isinstance(other, Complex):
+           
+            real_part = self.real + other.real
+            imag_part = self.imag + other.imag
+            return Complex(real_part, imag_part)
+        return NotImplemented
+
+    def __str__(self):
+               return f"{self.real} + {self.imag}i"
+
+if __name__ == "__main__":
+  
+    c1 = Complex(2, 3)
+    c2 = Complex(1, 4)
+    
+    result = c1 + c2
+   print(f"The sum of {c1} and {c2} is {result}")

@@ -1,0 +1,17 @@
+
+
+
+    def __init__(self, length, width):
+        """Initialize the rectangle with length and width."""
+        self.length = length
+        self.width = width
+
+    def area(self):
+        """Compute and return the area of the rectangle."""
+        return self.length * self.width
+
+if __name__ == "__main__":
+    
+  rect = Rectangle(5, 3)
+    
+     print("Area of the rectangle:", rect.area())

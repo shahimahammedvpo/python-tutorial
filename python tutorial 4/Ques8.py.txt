@@ -1,0 +1,23 @@
+
+
+
+class Book:
+    def __init__(self):
+        self.title = ""
+        self.author = ""
+        self.cost = 0.0
+
+    def get_details(self):
+        self.title = input("Enter the title of the book: ")
+        self.author = input("Enter the author of the book: ")
+        self.cost = float(input("Enter the cost of the book: "))
+
+    def print_details(self):
+        print(f"Title: {self.title}")
+        print(f"Author: {self.author}")
+        print(f"Cost: ${self.cost:.2f}")
+
+my_book = Book()
+
+my_book.get_details()
+my_book.print_details()
