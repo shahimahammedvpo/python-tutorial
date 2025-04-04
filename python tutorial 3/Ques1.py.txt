@@ -1,0 +1,17 @@
+import turtle
+
+screen = turtle.Screen()
+screen.bgcolor("blue")
+
+star = turtle.Turtle()
+star.color("white")
+star.speed(10)
+
+
+for i in range(5):
+    star.forward(50)  
+    star.right(144)    
+
+star.hideturtle()
+
+screen.mainloop()

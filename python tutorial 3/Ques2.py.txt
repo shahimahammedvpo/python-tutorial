@@ -1,0 +1,17 @@
+import turtle
+
+screen = turtle.Screen()
+screen.bgcolor("red")
+
+pentagon = turtle.Turtle()
+
+pentagon.color("white")
+pentagon.speed(5)
+
+for i in range(5):
+    pentagon.forward(50)  
+    pentagon.right(72)    
+
+pentagon.hideturtle()
+
+screen.mainloop()

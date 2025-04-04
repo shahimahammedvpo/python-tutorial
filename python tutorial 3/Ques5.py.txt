@@ -1,0 +1,20 @@
+import turtle
+
+screen = turtle.Screen()
+screen.bgcolor("black")
+
+hexagon_turtle = turtle.Turtle()
+hexagon_turtle.color("white")
+hexagon_turtle.speed(8)
+
+def draw_hexagon():
+    for _ in range(6):
+        hexagon_turtle.forward(50) 
+        hexagon_turtle.right(60)   
+
+for _ in range(10):
+    draw_hexagon()
+    hexagon_turtle.right(36) 
+
+hexagon_turtle.hideturtle()
+

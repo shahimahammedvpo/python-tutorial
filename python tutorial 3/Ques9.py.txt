@@ -1,0 +1,27 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def new_game():
+    global low, high, computer_guess
+    low = 1
+    high = 100
+    computer_guess = (low + high) // 2
+    guess_label.config(text=f"Computer's Guess: {computer_guess}")
+    feedback_label.config(text="Provide a clue ")
+    too_small_button.config(state="normal")
+    too_large_button.config(state="normal")
+    correct_button.config(state="normal")
+
+def too_small():
+    global low, computer_guess
+    low = computer_guess + 1
+    update_guess()
+
+def too_large():
+    global high, computer_guess
+    high = computer_guess - 1
+    update_guess()
+
+
+def correct():
+    feedback_label
