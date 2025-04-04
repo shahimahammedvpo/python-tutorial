@@ -1,0 +1,2 @@
+x, y = int(input()), int(input())
+print("Origin" if x == y == 0 else "X-axis" if y == 0 else "Y-axis" if x == 0 else "Quadrant 1" if x > 0 and y > 0 else "Quadrant 2" if x < 0 and y > 0 else "Quadrant 3" if x < 0 and y < 0 else "Quadrant 4")
